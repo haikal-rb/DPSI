@@ -51,7 +51,7 @@ router.put('/:folderID', async (req, res, next) => {
         next(err);
     }
 });
-
+//hanya admin yang dapat menegelola akses terhadap folder
 router.put('/access/:folderID', authenticate, authorize(['admin']), async (req, res, next) => {
     try {
         const { userName } = req.body;
